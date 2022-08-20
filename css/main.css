@@ -1794,6 +1794,7 @@ header .logo a {
 	background: #FFFFFF;
 	padding-top: 12rem;
 	padding-bottom: 12rem;
+	display: none;
 }
 #portfolio .folio-item {
 	padding: 0;
