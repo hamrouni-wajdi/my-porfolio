@@ -9,6 +9,7 @@ app.use(express.static("./"));
 
 app.post("/form", (req, res) => {
   console.log(req.params, req.query, req.body);
+  res.send("OK");
 });
 app.listen(3000, () => {
   console.log(`listening on ${port}`);
