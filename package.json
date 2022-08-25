@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/hamrouni-wajdi/my-porfolio#readme",
   "dependencies": {
-    "emailjs": "^4.0.1",
     "express": "^4.18.1",
     "nodemailer": "^6.7.8"
   }
