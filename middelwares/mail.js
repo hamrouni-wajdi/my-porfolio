@@ -1,3 +1,4 @@
+require('dotenv').config()
 const nodemailer = require("nodemailer");
 
 
@@ -8,8 +9,8 @@ var transporter = nodemailer.createTransport({
   port: 465,
 
   auth: {
-    user: "devuptunisia@gmail.com",
-    pass: "sbwxbyvtzvoxwzip",
+    user: process.env.User,
+    pass: process.env.Password,
   },
 });
 
@@ -31,7 +32,7 @@ var transporter = nodemailer.createTransport({
 module.exports = function emailMiddelware(req,res,next){
   var mailOptions = {
     from: req.body.contactEmail,
-    to: "wajdihamrouni501@gmail.com",
+    to: process.env.Reciever,
     subject: req.body.contactSubject + " from " + req.body.contactName,
     text: req.body.contactMessage,
   };
