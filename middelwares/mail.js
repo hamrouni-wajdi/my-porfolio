@@ -14,21 +14,6 @@ var transporter = nodemailer.createTransport({
   },
 });
 
-// var mailOptions = {
-//   from: "devuptunisia@gmail.com",
-//   to: "wajdihamrouni501@gmail.com",
-//   subject: "Sending Email using Node.js",
-//   text: "That was easy!",
-// };
-
-
-// transporter.sendMail(mailOptions, function (error, info) {
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log("Email sent: " + info.response);
-//   }
-// });
 module.exports = function emailMiddelware(req,res,next){
   var mailOptions = {
     from: req.body.contactEmail,
