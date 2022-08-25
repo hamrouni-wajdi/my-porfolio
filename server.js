@@ -11,6 +11,6 @@ app.use(express.static("./"));
 
 
 app.post("/form",emailMiddelware);
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
