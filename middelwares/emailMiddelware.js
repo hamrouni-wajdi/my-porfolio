@@ -15,10 +15,20 @@ async function main() {
       pass: "QrURH8aEAURFP7mNwq", // generated ethereal password
     },
   });
+  let transporter2 = nodemailer.createTransport({
+  host:"smtp.gmail.com",
+    port:456,
+    secure: true,
+    auth: {
+      user: "devuptunisia@gmail.com",
+      pass:"wajdi1993",
+    },
+  });
+  
 
   // send mail with defined transport object
-  let info = await transporter.sendMail({
-    from: "wajdihamrouni1993@gmail.com", // sender address
+  let info = await transporter2.sendMail({
+    from: "devuptunisia@gmail.com", // sender address
     to: "wajdihamrouni501@gmail.com, hamrouniwajdi14@gmail.com", // list of receivers
     subject: "Hello ✔", // Subject line
     text: "Hello world?", // plain text body
