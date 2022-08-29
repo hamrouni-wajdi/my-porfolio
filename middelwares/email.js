@@ -1,22 +1,25 @@
 require("dotenv").config();
-const nodemailer = require("nodemailer");
+var email = require("emailjs");
 
-var transporter = nodemailer.createTransport({
+var server = email.server.connect({
+  user: process.env.User,
+  password: process.env.Password,
   host: "smtp.gmail.com",
-  secure: true,
   ssl: true,
-  port: 465,
-
-  auth: {
-    type: "login",
-    user: process.env.User,
-    pass: process.env.Password,
-  },
-  tls: {
-    rejectUnauthorized: false,
-  },
-  logger: true,
 });
+
+server.send(
+  {
+    text: "Hey howdy",
+    from: "NodeJS",
+    to: "Wilson <wilson.balderrama@gmail.com>",
+    cc: "",
+    subject: "Greetings",
+  },
+  function (err, message) {
+    console.log(err || message);
+  }
+);
 
 module.exports = function emailMiddelware(req, res, next) {
   var mailOptions = {
@@ -37,4 +40,4 @@ module.exports = function emailMiddelware(req, res, next) {
   next();
 };
 
-
+module.exports;
